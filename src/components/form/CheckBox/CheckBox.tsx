@@ -1,3 +1,4 @@
+import { copyFileSync } from 'fs';
 import React, { useState } from 'react';
 import { useFormContext } from 'react-hook-form';
 
@@ -23,15 +24,20 @@ const CheckBox: React.FC<TCheckBoxProps> = ({
     formState: { errors },
   } = useFormContext();
 
+  const [isShowPopup, setIsShowPopup] = useState(true);
+
+  const show = (data: boolean) => {
+    {
+      data ? setIsShowPopup(!data) : setIsShowPopup(data);
+    }
+    // console.log(data);
+    // setIsShowPopup(data);
+  };
+
   // const StatePopup = (data: boolean) => {
   //   setStatePopup(data);
   // };
   // console.log(errors['ahihi']);
-
-  const showAlert = (data: any) => {
-    console.log(data);
-    alert(data);
-  };
 
   return (
     <div className='container__input--checkbox'>
@@ -62,9 +68,9 @@ const CheckBox: React.FC<TCheckBoxProps> = ({
       {/* {(errors[nameCheckBox] || errorMessage) && (
         <span className='Input__errMsg'>{errors[nameCheckBox]?.message}</span>
       )} */}
-      {errors[nameCheckBox] ? (
-        <ShowPopup title={errorMessage} name='test' openPopup={true} />
-      ) : null}
+      {errors[nameCheckBox] && isShowPopup && (
+        <ShowPopup title={errorMessage} name='test' openPopup={show} />
+      )}
     </div>
   );
 };

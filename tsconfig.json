@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    // "typeRoots": ["node_modules/@types", "src/assets/image/navi_title.d.ts"],
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
@@ -16,5 +17,5 @@
     "noEmit": true,
     "jsx": "react-jsx"
   },
-  "include": ["src"]
+  "include": ["./src/"]
 }

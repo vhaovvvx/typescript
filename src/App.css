@@ -1,3 +1,8 @@
+.App {
+  position: relative;
+  background-color: gray;
+}
+
 label {
   line-height: normal;
   text-align: initial;
@@ -7,4 +12,48 @@ label {
   color: white;
   font-size: 14px;
   font-weight: 200;
+}
+
+.navigation-container {
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  height: 100vh;
+  padding-left: 20px;
+  max-width: 340px;
+  border-right: 1px solid black;
+}
+.navigation-container img {
+  margin: 40px 0;
+  height: 53px;
+}
+
+.navigation-container__ul-items {
+  margin-top: 20px;
+}
+.navigation-container__ul-items li {
+  padding-bottom: 37px;
+  cursor: pointer;
+  /* display: inline-block; */
+}
+
+.ul-item {
+  padding-top: 5px;
+  font-size: 24px;
+  line-height: 18px;
+  font-weight: bold;
+  padding-left: 10px;
+  vertical-align: middle;
+  font-family: 'Roboto', 'sans-serif' !important;
+}
+
+li:hover .test-icons,
+li:hover a {
+  fill: red;
+  color: red;
+}
+
+div.container-fluid {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
