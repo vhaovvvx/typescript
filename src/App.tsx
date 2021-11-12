@@ -40,8 +40,11 @@ import {
   Routes,
   Link,
   BrowserRouter,
+  useRoutes,
 } from 'react-router-dom';
 
+import DashboardProperties from './components/dashboard/DashboardProperties';
+import WishList from './components/wishlist/WishList';
 
 function App() {
   const [isOpen, setIsOpen] = useState(false);
@@ -136,9 +139,9 @@ function App() {
               </li>
             </ul>
           </div>
-         
+
           <Routes>
-            <Route path='/' element={<div>Dashboard</div>}></Route>
+            <Route path='/' element={<DashboardProperties />}></Route>
             <Route path='/portfolio' element={<div>My portfolio</div>}></Route>
             <Route
               path='/Pending'
@@ -149,14 +152,13 @@ function App() {
               path='/Notifications'
               element={<div>Notifications</div>}
             ></Route>
-            <Route path='/WishList' element={<div>WishList</div>}></Route>
+            <Route path='/WishList' element={<WishList></WishList>}></Route>
           </Routes>
         </div>
       </div>
 
       {/* <PopupYoutube hrefLink='https://www.youtube.com/embed/nihTJrochFI'></PopupYoutube> */}
       {/* <Buttons></Buttons> */}
-      {/* <Charts></Charts> */}
       {/* <div className='App'>
          {errors && isOpen && <ShowPopup openPopup={clickHandlerInput} />} 
         <FormProvider {...methods}>
